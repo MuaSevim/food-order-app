@@ -1,0 +1,14 @@
+.nav {
+  background-color: #48180b;
+  padding: 1.6rem 9.6rem;
+  color: #eee;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-secondary {
+  font-size: 3.6rem;
+  font-weight: 600;
+}

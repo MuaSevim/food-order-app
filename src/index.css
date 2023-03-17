@@ -1,14 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&display=swap");
 
-/*
-Main Color: #be123c
-Darker: #881337
-Lighter: #f43f5e 
-
-Font Main: #333
-Font Darker: #222
-*/
-
 * {
   margin: 0;
   padding: 0;
@@ -21,4 +12,5 @@ html {
 body {
   font-family: "Golos Text", sans-serif;
   color: #333;
+  background-color: #48180b;
 }
