@@ -1,10 +1,10 @@
-import HeaderCartButton from "./HeaderCartButton";
-import styles from "./Navigation.module.css";
+import HeaderCartButton from './HeaderCartButton';
+import styles from './Navigation.module.css';
 
-const Navigation = (props) => {
+const Navigation = props => {
   return (
     <nav className={styles.nav}>
-      <h2 className={styles["header-secondary"]}>Milano Pizzas</h2>
+      <h2 className={styles['header-secondary']}>Milano Pizzas</h2>
       <HeaderCartButton />
     </nav>
   );
