@@ -12,7 +12,9 @@ const CartContext = createContext({
 export const CartContextProvider = props => {
   const selectedMeals = [];
 
+  // When this function is executed CartButton and Cart components should get re-rendered with newer values
   const addMealHandler = (id, amount) => {
+    console.log('Context');
     // Find the meal
     const meal = meals.find(meal => meal.info.id === id);
 
@@ -20,9 +22,12 @@ export const CartContextProvider = props => {
     meal.amount += +amount;
 
     // Update the selected meals
+    // When this happens, I want to update the CartButton Component
     const selectedMeal = selectedMeals.find(m => m.id === id);
     if (selectedMeal) selectedMeal.amount += +amount;
     else selectedMeals.push({ id, amount: +amount });
+
+    // console.log(selectedMeals);
   };
 
   const increaseMealHandler = id => {};
@@ -31,16 +36,17 @@ export const CartContextProvider = props => {
 
   const displayTotalAmount = pizzas => {};
 
-  const ctxValues = {
-    meals,
-    selectedMeals,
-    onAddMeal: addMealHandler,
-    onIncreaseMeal: increaseMealHandler,
-    onDecreaseMeal: decreaseMealHandler,
-    displayTotalAmount,
-  };
   return (
-    <CartContext.Provider value={ctxValues}>
+    <CartContext.Provider
+      value={{
+        meals,
+        selectedMeals,
+        onAddMeal: addMealHandler,
+        onIncreaseMeal: increaseMealHandler,
+        onDecreaseMeal: decreaseMealHandler,
+        displayTotalAmount,
+      }}
+    >
       {props.children}
     </CartContext.Provider>
   );

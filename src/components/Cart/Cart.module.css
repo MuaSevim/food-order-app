@@ -1,0 +1,58 @@
+.items {
+  list-style: none;
+}
+
+.items li {
+  font-size: 1.8rem;
+  margin-bottom: 2.4rem;
+}
+
+.total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2.4rem;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button,
+.button--alt {
+  cursor: pointer;
+  background: none;
+  font-size: 1.8rem;
+  padding: 1.2rem 2.4rem;
+  border: 1px solid #903016;
+  border-radius: 24px;
+
+  transition: all 0.3s;
+}
+
+.button {
+  background-color: #903016;
+  color: #fff;
+}
+
+.button--alt {
+  background-color: #fff;
+  color: #903016;
+  margin-right: 1.2rem;
+}
+
+.button:hover,
+.button:active {
+  background-color: #fff;
+  color: #903016;
+}
+
+.button--alt:hover,
+.button--alt:active {
+  background-color: #903016;
+  color: #fff;
+}

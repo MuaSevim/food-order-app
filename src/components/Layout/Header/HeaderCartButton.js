@@ -1,26 +1,22 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import CartContext from '../../store/cart-context';
 import CartIcon from '../../Cart/CartIcon';
 import styles from './HeaderCartButton.module.css';
 
 const HeaderCartButton = () => {
-  const { selectedMeals } = useContext(CartContext);
+  const ctx = useContext(CartContext);
 
-  let totalMeals = 0;
-
-  if (selectedMeals[0]) {
-    totalMeals = selectedMeals
-      .map(meal => meal.amount)
-      .reduce((acc, curr) => acc + curr);
-  }
-
+  const mealAmount = ctx.selectedMeals.reduce((acc, { amount }) => {
+    return acc + amount;
+  }, 0);
+  
   return (
     <button className={styles.btn}>
       <span className={styles.icon}>
         <CartIcon />
       </span>
       <span className={styles.text}>Your Cart</span>
-      <span className={styles.badge}>{totalMeals}</span>
+      <span className={styles.badge}>{0}</span>
     </button>
   );
 };

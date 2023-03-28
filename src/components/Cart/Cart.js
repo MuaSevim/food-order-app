@@ -1,24 +1,30 @@
-import { Fragment } from 'react';
-import ReactDOM from 'react-dom';
+import Modal from '../UI/Modal';
 import styles from './Cart.module.css';
 
-const CartBackdrop = props => <div className={styles.backdrop}></div>;
-
-const CartOverlay = props => {
-  return <div className={styles.overlay}></div>;
-};
-
 const Cart = props => {
-  <Fragment>
-    {ReactDOM.createPortal(
-      <CartBackdrop />,
-      document.getElementById('cart-backdrop')
-    )}
-    {ReactDOM.createPortal(
-      <CartOverlay />,
-      document.getElementById('cart-overlay')
-    )}
-  </Fragment>;
+  const cartItems = (
+    <ul className={styles.items}>
+      {[{ id: 'c1', name: 'Pepperoni Pizza', amount: 3, price: 16.55 }].map(
+        item => (
+          <li>{item.name}</li>
+        )
+      )}
+    </ul>
+  );
+
+  return (
+    <Modal>
+      {cartItems}
+      <div className={styles.total}>
+        <span>Total Amount</span>
+        <span>35.62</span>
+      </div>
+      <div className={styles.actions}>
+        <button className={styles['button--alt']}>Close</button>
+        <button className={styles.button}>Order</button>
+      </div>
+    </Modal>
+  );
 };
 
 export default Cart;

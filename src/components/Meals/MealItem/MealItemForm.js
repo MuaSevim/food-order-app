@@ -10,9 +10,13 @@ const MealItemForm = props => {
 
   const newMealHandler = e => {
     e.preventDefault();
+
+    // Find the meal
     const { info: meal } = ctx.meals.find(meal => meal.info.id === props.id);
+
     // Add the value
     ctx.onAddMeal(meal.id, mealRef.current.value);
+
     // Reset the input
     mealRef.current.value = '1';
   };
