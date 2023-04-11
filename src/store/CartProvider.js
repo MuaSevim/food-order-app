@@ -8,9 +8,9 @@ const defaultCartState = {
 
 const cartReducer = (state, action) => {
   if (action.type === 'ADD') {
-    const updatedItems = state.items.concat(action.item);
+    const updatedItems = [...state.items, action.item];
     const updatedTotalAmount =
-      state.totalAmount + action.item.price * action.item.amount;
+      state.totalAmount + action.item.amount * action.item.price;
     return {
       items: updatedItems,
       totalAmount: updatedTotalAmount,
@@ -18,14 +18,13 @@ const cartReducer = (state, action) => {
   }
 
   if (action.type === 'REMOVE') {
+    // Just remove it from the list then
   }
 
   return defaultCartState;
 };
 
 const CartProvider = props => {
-  const findMeal = id => meals.find(m => m.id === id);
-
   const [cartState, dispatchCartAction] = useReducer(
     cartReducer,
     defaultCartState
@@ -45,6 +44,7 @@ const CartProvider = props => {
   const cartContext = {
     cartIsShown,
     items: cartState.items,
+    totalAmount: cartState.totalAmount,
     addItem: addItemToCartHandler,
     removeItem: removeItemFromCartHandler,
     onShowCart: () => setCartIsShown(true),

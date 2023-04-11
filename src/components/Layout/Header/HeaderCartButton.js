@@ -5,14 +5,9 @@ import styles from './HeaderCartButton.module.css';
 
 const HeaderCartButton = () => {
   const cartCtx = useContext(CartContext);
-
-  const totalMeals = cartCtx.meals.reduce((sum, meal) => sum + meal.amount, 0);
-
-  const onClickHandler = () => {
-    cartCtx.onShowCart();
-    console.log('Button cartIsShown :', cartCtx.cartIsShown);
-    console.log('Button total meals :', totalMeals);
-  };
+  // const totalAmount = cartCtx.totalAmount;
+  const totalAmount = cartCtx.items.reduce((acc, curr) => acc + curr.amount, 0);
+  const onClickHandler = () => cartCtx.onShowCart();
 
   return (
     <button className={styles.btn} onClick={onClickHandler}>
@@ -20,7 +15,7 @@ const HeaderCartButton = () => {
         <CartIcon />
       </span>
       <span className={styles.text}>Your Cart</span>
-      <span className={styles.badge}>{totalMeals}</span>
+      <span className={styles.badge}>{totalAmount}</span>
     </button>
   );
 };
