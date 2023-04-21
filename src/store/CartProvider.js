@@ -18,7 +18,6 @@ const cartReducer = (state, action) => {
   }
 
   if (action.type === 'REMOVE') {
-    // Just remove it from the list then
   }
 
   return defaultCartState;

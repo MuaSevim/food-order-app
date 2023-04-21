@@ -8,6 +8,17 @@ const MealItemForm = props => {
 
   const mealRef = useRef();
 
+  const newMealHandler = e => {
+    e.preventDefault();
+
+    const amount = +mealRef.current.value;
+
+    // const amount = +mealRef.current.getValue();
+    const item = { ...props.item, amount };
+    mealCtx.addItem(item);
+    mealRef.current.value = '1';
+  };
+
   const inputValues = {
     id: props.item.id,
     type: 'number',
@@ -16,15 +27,6 @@ const MealItemForm = props => {
     step: '1',
     defaultValue: '1',
     ref: mealRef,
-  };
-
-  const newMealHandler = e => {
-    e.preventDefault();
-
-    const amount = +mealRef.current.getAmount();
-    const item = { ...props.item, amount };
-    mealCtx.addItem(item);
-    mealRef.current.resetValue();
   };
 
   return (
