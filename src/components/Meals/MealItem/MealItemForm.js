@@ -13,7 +13,6 @@ const MealItemForm = props => {
 
     const amount = +mealRef.current.value;
 
-    // const amount = +mealRef.current.getValue();
     const item = { ...props.item, amount };
     mealCtx.addItem(item);
     mealRef.current.value = '1';
