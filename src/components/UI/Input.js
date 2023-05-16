@@ -6,6 +6,8 @@ const Input = forwardRef((props, ref) => {
 
   const getValue = () => inputRef.current.value;
   const resetValue = () => (inputRef.current.value = 1);
+  const getValue1 = () => inputRef.current.value;
+  console.log(getValue1);
 
   useImperativeHandle(ref, () => {
     return { getValue, resetValue };
