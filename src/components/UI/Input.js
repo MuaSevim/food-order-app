@@ -1,20 +1,12 @@
-import { useRef, forwardRef, useImperativeHandle } from 'react';
-import styles from './Input.module.css';
+import React from "react";
 
-const Input = forwardRef((props, ref) => {
-  const inputRef = useRef();
+import classes from "./Input.module.css";
 
-  const getValue = () => inputRef.current.value;
-  const resetValue = () => (inputRef.current.value = 1);
-
-  useImperativeHandle(ref, () => {
-    return { getValue, resetValue };
-  });
-
+const Input = React.forwardRef((props, ref) => {
   return (
-    <div className={styles.input}>
+    <div className={classes.input}>
       <label htmlFor={props.input.id}>{props.label}</label>
-      <input {...props.input} />
+      <input ref={ref} {...props.input} />
     </div>
   );
 });

@@ -1,27 +1,18 @@
 .input {
-  font-size: 1.8rem;
   display: flex;
   align-items: center;
-  gap: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 
 .input label {
-  font-weight: 700;
+  font-weight: bold;
+  margin-right: 1rem;
 }
 
 .input input {
-  font-family: inherit;
-  outline: none;
-  border: none;
-  font-size: 1.8rem;
-  font-weight: 500;
-  padding: 0.4rem 0 0.6rem 0.4rem;
+  width: 3rem;
+  border-radius: 5px;
   border: 1px solid #ccc;
-  background-color: #fff;
-
-  transition: all 0.3s;
-}
-
-.input input {
-  border-radius: 7px;
+  font: inherit;
+  padding-left: 0.5rem;
 }
