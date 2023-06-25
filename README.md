@@ -2,9 +2,11 @@
 
 ## Live Demo
 
-You can visit the live demo ![here](https://muasevim.github.io/food-order-app/)
+You can visit the live demo [here](https://muasevim.github.io/food-order-app/)
 
 ## Preview
+
+![Image of the app](./src/assets/preview.png)
 
 ## ReactJS
 
