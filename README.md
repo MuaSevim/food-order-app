@@ -1,10 +1,14 @@
-# Getting Started with Create React App
+# A Basic Meal App with ReactJS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Live Demo
 
-## Available Scripts
+You can visit the live demo ![here](https://muasevim.github.io/food-order-app/)
 
-In the project directory, you can run:
+## Preview
+
+## ReactJS
+
+This project was built with [Create React App](https://github.com/facebook/create-react-app).
 
 ### `npm start`
 
